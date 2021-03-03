@@ -1,0 +1,25 @@
+plugins {
+    id 'java'
+    id 'war'
+}
+
+group 'com.luml'
+version '1.0-SNAPSHOT'
+
+sourceCompatibility = 1.8
+
+repositories {
+    /**
+     * 先让gradle从本地仓库找,找不到再从下面的mavenCentral()中央仓库去找jar包
+     */
+    mavenLocal()
+    mavenCentral()
+}
+
+dependencies {
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+    compile 'org.springframework:spring-context:5.2.4.RELEASE'
+    compile 'org.springframework:spring-web:5.2.4.RELEASE'
+    compile 'org.springframework:spring-webmvc:5.2.4.RELEASE'
+    //compile group: 'org.springframework', name: 'spring-core', version: '5.2.6.RELEASE'
+}

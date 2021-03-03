@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+                           http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context
+                           http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/mvc https://www.springframework.org/schema/mvc/spring-mvc.xsd">
+    <!--自动扫描路径-->
+    <context:component-scan base-package="com.luml"></context:component-scan>
+
+    <!-- 支持将spring工厂中的对象直接注入给Controller -->
+    <mvc:annotation-driven/>
+
+    <!--静态资源的访问-->
+    <mvc:default-servlet-handler/>
+
+    <!-- 配置视图解析器 ,解析方法：前缀+逻辑视图名+后缀-->
+    <bean id="viewResolver" class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <!-- 通过setter方法注入前缀 -->
+        <property name="prefix" value="/jsp/"/>
+        <!-- 通过setter方法注入后缀 -->
+        <property name="suffix" value=".jsp"/>
+    </bean>
+</beans>

@@ -1,0 +1,5 @@
+rootProject.name = 'Gradle'
+include 'gradle-spring-boot-project'
+include 'Gradle-Springboot'
+include 'Gradle-SpringMvc'
+
